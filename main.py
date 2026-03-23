@@ -29,8 +29,9 @@ if __name__ == "__main__":
     func4 = find_min(arr_for_test)
     func5 = buble_sort(arr_for_test)"""
 
+    n_test = [10,50,100,500,1000,5000,10000,50000,100000,500000,1000000,5000000,10000000]
     result = []
-    for n in [10,100,1000,10000,100000,1000000,10000000]:
+    for n in n_test:
         arr_for_test = random_list(n)
         result_n = {
             "count": n,
@@ -41,29 +42,29 @@ if __name__ == "__main__":
     print("first_el")
 
     result = []
-    for n in [10,100,1000,10000,100000,1000000,1000000]:
+    for n in n_test:
         arr_for_test = random_list(n)
         result_n = {
             "count": n,
-            "time": str(binary_search(sorted(arr_for_test), arr_for_test[5])["time"]).replace("e-","E+").replace('.',',')
+            "time": str(binary_search(sorted(arr_for_test), arr_for_test[-1])["time"]).replace("e","E").replace('.',',')
         }
         result.append(result_n)
     to_storage(result,"binary_search")
     print("binary_search")
 
     result = []
-    for n in [10,100,1000,10000,100000,1000000,10000000]:
+    for n in n_test:
         arr_for_test = random_list(n)
         result_n = {
             "count": n,
-            "time": str(linear_search(arr_for_test, arr_for_test[5])["time"]).replace("e","E").replace('.',',')
+            "time": str(linear_search(arr_for_test, arr_for_test[-1])["time"]).replace("e","E").replace('.',',')
         }
         result.append(result_n)
     to_storage(result,"linear_search")
     print("linear_search")
 
     result = []
-    for n in [10,100,1000,10000,100000,1000000,10000000]:
+    for n in n_test:
         arr_for_test = random_list(n)
         result_n = {
             "count": n,
@@ -82,5 +83,5 @@ if __name__ == "__main__":
         }
         result.append(result_n)
     to_storage(result, "buble_sort")
-    print(buble_sort)
+    print("buble_sort")
 
